@@ -1,4 +1,4 @@
-import { Button, Modal, Text, View } from "react-native";
+import { Button, Image, Modal, Text, View } from "react-native";
 import styles from "./Home.styles";
 import { useState } from "react";
 
@@ -7,7 +7,15 @@ const Home = () => {
 
   return (
     <View style={styles.container}>
-      <Button title="Abrir Modal" onPress={() => setModalVisible(true)} />
+      <View style={styles.header}>
+        <Text style={styles.headerTitle}>
+          Welcome to the most beautiful app in the world
+        </Text>
+        <Text style={styles.points}>20 points</Text>
+      </View>
+      <View style={styles.body}>
+        <Button title="Open Modal" onPress={() => setModalVisible(true)} />
+      </View>
 
       <Modal
         animationType="slide"
@@ -18,8 +26,11 @@ const Home = () => {
       >
         <View style={styles.modalContainer}>
           <View style={styles.modalContent}>
-            <Text>A continuación puedes ver el QR</Text>
-            <Button title="Cerrar" onPress={() => setModalVisible(false)} />
+            <Text style={styles.modalDescription}>
+              A continuación puedes ver el QR
+            </Text>
+            <Image source={require("../../assets/images/qrexample.png")} />
+            <Button title="Close" onPress={() => setModalVisible(false)} />
           </View>
         </View>
       </Modal>
