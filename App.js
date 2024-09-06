@@ -2,8 +2,8 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import Rewards from "./src/components/Rewards/Rewards";
 import HomeScreen from "./src/screens/Home/Home.screen";
+import RewardScreen from "./src/screens/Rewards/Rewards.screen";
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -11,8 +11,8 @@ const Stack = createNativeStackNavigator();
 function Tabs() {
   return (
     <Tab.Navigator>
-      <Tab.Screen name="Inicio" component={HomeScreen} />
-      <Tab.Screen name="Recompensas" component={Rewards} />
+      <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="Reward" component={RewardScreen} />
     </Tab.Navigator>
   );
 }
